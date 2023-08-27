@@ -1,0 +1,7 @@
+<div class="flex-layout" [dir]="'dir'|translate" [ngClass]="{'rtl-dir': translate.currentLang=='ar'}">
+    <app-branding></app-branding>
+    <mat-nav-list class="sidebar-list">
+        <app-nav-item *ngFor="let item of navItems" [item]="item"> </app-nav-item>
+    </mat-nav-list>
+
+</div>

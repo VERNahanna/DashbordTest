@@ -1,0 +1,20 @@
+<mat-sidenav-container class="mainWrapper blue_theme  light-theme" autosize autoFocus [dir]="'dir'|translate" [ngClass]="{'rtl-dir': translate.currentLang=='ar'}">
+    <!-- ============================================================== -->
+    <!-- Vertical Sidebar -->
+    <!-- ============================================================== -->
+
+    <mat-sidenav #leftsidenav [mode]="isOver ? 'over' : 'side'" [opened]="!isOver" (openedChange)="onSidenavOpenedChange($event)" (closedStart)="onSidenavClosedStart()" class="sidebarNav">
+        <app-sidebar></app-sidebar>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="contentWrapper">
+
+
+        <app-header [showToggle]="!isOver" (toggleCollapsed)="toggleCollapsed()" (toggleMobileNav)="sidenav.toggle()"></app-header>
+
+        <main class="pageWrapper">
+
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>
